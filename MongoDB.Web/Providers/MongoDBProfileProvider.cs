@@ -191,7 +191,7 @@ namespace MongoDB.Web.Providers
                     valuesDictionary.Add(v.Key.ToString(), v.Value.ToBsonDocument());
             }
             mergeDocument.Add(valuesDictionary);
-            bsonDocument.Merge(mergeDocument);
+            bsonDocument.Merge(mergeDocument, true);
 
             this.mongoCollection.Save(bsonDocument);
         }
